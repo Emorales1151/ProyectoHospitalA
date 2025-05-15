@@ -10,7 +10,7 @@ namespace CapaPresentacion.Datos
 {
     public class CDconexion
     {
-        private SqlConnection db_conexion = new SqlConnection("Data Source=EMORALES\\SQLEXPRESS;Initial Catalog=db_farmaciaPrograTest;Integrated Security=True;Encrypt=False");
+        private SqlConnection db_conexion = new SqlConnection("Data Source=GTM-L-0971\\SQLEXPRESS;Initial Catalog=db_hospitalA;Integrated Security=True;Encrypt=False");
 
         public SqlConnection MtdAbrirConexion()
         {
