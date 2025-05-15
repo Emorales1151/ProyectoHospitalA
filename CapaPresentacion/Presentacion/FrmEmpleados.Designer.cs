@@ -48,10 +48,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
+            this.cboxTipoTrabajo = new System.Windows.Forms.ComboBox();
             this.txtEspecialidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboxTipoTrabajo = new System.Windows.Forms.ComboBox();
-            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -215,6 +215,7 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // dgvProveedores
             // 
@@ -287,22 +288,13 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             // 
-            // txtEspecialidad
+            // dtpFechaAlta
             // 
-            this.txtEspecialidad.Location = new System.Drawing.Point(149, 113);
-            this.txtEspecialidad.Name = "txtEspecialidad";
-            this.txtEspecialidad.Size = new System.Drawing.Size(121, 20);
-            this.txtEspecialidad.TabIndex = 18;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 15);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Especialidad:";
+            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAlta.Location = new System.Drawing.Point(458, 64);
+            this.dtpFechaAlta.Name = "dtpFechaAlta";
+            this.dtpFechaAlta.Size = new System.Drawing.Size(121, 20);
+            this.dtpFechaAlta.TabIndex = 21;
             // 
             // cboxTipoTrabajo
             // 
@@ -319,13 +311,22 @@
             this.cboxTipoTrabajo.Size = new System.Drawing.Size(121, 23);
             this.cboxTipoTrabajo.TabIndex = 20;
             // 
-            // dtpFechaAlta
+            // txtEspecialidad
             // 
-            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlta.Location = new System.Drawing.Point(458, 64);
-            this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(121, 20);
-            this.dtpFechaAlta.TabIndex = 21;
+            this.txtEspecialidad.Location = new System.Drawing.Point(149, 113);
+            this.txtEspecialidad.Name = "txtEspecialidad";
+            this.txtEspecialidad.Size = new System.Drawing.Size(121, 20);
+            this.txtEspecialidad.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 15);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Especialidad:";
             // 
             // FrmEmpleados
             // 

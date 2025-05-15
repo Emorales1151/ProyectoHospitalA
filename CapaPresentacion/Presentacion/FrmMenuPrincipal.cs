@@ -21,6 +21,7 @@ namespace CapaPresentacion.Presentacion
             this.DoubleBuffered = true;
         }
 
+        #region Funcionalidades del formulario
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 12;
         private const int WM_NCHITTEST = 132;
@@ -104,9 +105,44 @@ namespace CapaPresentacion.Presentacion
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        #endregion
 
+        #region Funcionalidad para abrir formularios dentro del panel contenedor
+        //Metodo para abrir formularios dentro del panel contenedor
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
+                                                                                     //si el formulario/instancia no existe
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                panelFormularios.Controls.Add(formulario);
+                panelFormularios.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            //si el formulario/instancia existe
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
+        #endregion
 
+        // En en el siguiente codigo se configuran los botones del menu principal para abrir los formularios correspondientes
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmEmpleados>();
+        }
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmUsuarios>();
 
+        }
 
     }
 }
