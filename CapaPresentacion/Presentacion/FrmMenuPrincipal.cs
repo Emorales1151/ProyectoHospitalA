@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.Seguridad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -131,6 +132,11 @@ namespace CapaPresentacion.Presentacion
                 formulario.BringToFront();
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         // En en el siguiente codigo se configuran los botones del menu principal para abrir los formularios correspondientes
@@ -138,10 +144,35 @@ namespace CapaPresentacion.Presentacion
         {
             AbrirFormulario<FrmEmpleados>();
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Quiere cerrar sesion?", "Advertencia",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void panelFormularios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            LoadUserData();
+        }
+
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FrmUsuarios>();
 
+        }
+
+        private void LoadUserData()
+        {
+            lblUsuario.Text = UserCache.NombreUsuario;
+            lblRol.Text = UserCache.Rol;
+            lblEstado.Text = UserCache.Estado;
         }
 
     }
