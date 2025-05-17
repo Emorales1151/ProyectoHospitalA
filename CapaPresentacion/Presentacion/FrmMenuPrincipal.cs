@@ -1,4 +1,4 @@
-﻿//using CapaPresentacion.Seguridad;
+﻿using CapaPresentacion.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
